@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #080d27;
+    color: white;
+}
+
+/* Navbar */
+.navbar {
+    background: #172b59;
+    padding: 15px 0;
+}
+
+.navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-link {
+    color: rgb(239, 226, 226) !important;
+    margin-left: 15px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #63e6ff !important;
+    transform: translateY(-3px);
+}
+
+/* Hero */
+.hero {
+    min-height: 85vh;
+    display: flex;
+    align-items: center;
+    padding: 50px 0;
+    background: linear-gradient(135deg, #080d27, #182451);
+}
+
+.hero-text h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero-text p,
+.feature-card p,
+.about-section p,
+.contact-section p {
+    color: #d0d8f0;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+/* Button */
+.explore-btn {
+    background: #3978ff;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: #63e6ff;
+    color: #080d27;
+    transform: translateY(-3px);
+}
+
+/* Space Animation */
+.animation-area {
+    height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.planet {
+    width: 220px;
+    height: 220px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #63e6ff, #3949ab, #101735);
+    box-shadow: 0 0 45px #63e6ff66;
+    animation: float 3s infinite alternate;
+}
+
+.rocket {
+    position: absolute;
+    font-size: 70px;
+    animation: rocket 4s infinite ease-in-out;
+}
+
+.astronaut {
+    position: absolute;
+    top: 40%;
+    left: 63%;
+    font-size: 55px;
+    z-index: 5;
+    transform: rotate(-15deg);
+    animation: astronautFloat 3s ease-in-out infinite alternate;
+}
+
+@keyframes astronautFloat {
+    0% {
+        transform: translateY(0) rotate(-15deg);
+    }
+
+    100% {
+        transform: translateY(-15px) rotate(-5deg);
+    }
+}
+
+@keyframes astronautFloat {
+    from {
+        transform: translate(-50%, -50%);
+    }
+
+    to {
+        transform: translate(-50%, -60%);
+    }
+}
+
+.star {
+    position: absolute;
+    color: #ffe66d;
+    animation: blink 1.5s infinite alternate;
+}
+
+.star1 {
+    top: 10%;
+    left: 15%;
+}
+
+.star2 {
+    bottom: 15%;
+    left: 10%;
+}
+
+.star3 {
+    bottom: 15%;
+    right: 12%;
+}
+
+.star4 {
+    top: 45%;
+    right: 20%;
+}
+
+/* Keyframes */
+@keyframes float {
+    to {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rocket {
+
+    0%,
+    100% {
+        transform: translate(0, 20px) rotate(-15deg);
+    }
+
+    50% {
+        transform: translate(20px, -25px) rotate(10deg);
+    }
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.3;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* About */
+.about-section {
+    padding: 60px 0;
+    background: #101735;
+    text-align: center;
+}
+
+.about-section h2,
+.features-section h2,
+.contact-section h2 {
+    margin-bottom: 20px;
+}
+
+/* Features */
+.features-section {
+    padding: 60px 0;
+}
+
+.feature-card {
+    height: 100%;
+    padding: 25px;
+    text-align: center;
+    background: #151f42;
+    border: 1px solid #29385f;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #63e6ff;
+    box-shadow: 0 8px 20px #63e6ff22;
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+/* Contact */
+.contact-section {
+    padding: 60px 20px;
+    text-align: center;
+    background: linear-gradient(135deg, #182451, #101735);
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #050819;
+    color: #b7c1dd;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .hero {
+        text-align: center;
+    }
+
+    .animation-area {
+        margin-top: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-text h1 {
+        font-size: 34px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+    }
+
+    .planet {
+        width: 160px;
+        height: 160px;
+    }
+
+    .rocket {
+        font-size: 50px;
+    }
+
+    .astronaut {
+        font-size: 38px;
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+    }
+}
